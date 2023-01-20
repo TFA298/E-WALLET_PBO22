@@ -1,36 +1,30 @@
-import Entitiy.TopUp;
-import Entitiy.Transaksi;
-import Entitiy.User;
-
-import java.util.ArrayList;
-
 public class EWallet {
+    static User akunTerdaftar;
 
-    private static ArrayList<User> registeredAkun = new ArrayList<>();
-
-    public static void initUser(){
-        User user = new User("Teguh Firdaus Alfaraih","TFA", "081331065985" , "12345","123");
-        Authorization.regis(user);
+    public static User getAkunTerdaftar() {
+        return akunTerdaftar;
     }
 
-    public static ArrayList<User> getAkunTerdaftar() {
-        return registeredAkun;
+    public static boolean verifPin(String pin) {
+        boolean status = akunTerdaftar.pin.equals(pin);
+
+        return  status;
     }
 
-    public static int cekSaldo(User user) {
-        return user.getDompet().getSaldo().getSaldo();
-    }
-
-    public static void topUp(User user, TopUp trs) {
-        user.getDompet().tambahTrs(trs);
-        user.getDompet().getSaldo().tambahSaldo(trs.getNominalHarga());
-    }
-
-    public static boolean pulsaPurchase(User user, Transaksi trs) {
-        boolean status = user.getDompet().getSaldo().ambilSaldo(trs.getTotalPayment());
-        if (status){
-            user.getDompet().tambahTrs(trs);
+    public static  boolean registrasiUser(User akunBaru) {
+        if(akunTerdaftar != null){
+            if ((akunTerdaftar.username.equals(akunBaru.username))
+                || (akunTerdaftar.no_Telp.equals(akunBaru.no_Telp))) {
+                return false;
+            }
+            else {
+                akunTerdaftar = akunBaru;
+                return true;
+            }
         }
-        return status;
+        else {
+            akunTerdaftar =akunBaru;
+            return true;
+        }
     }
 }

@@ -1,5 +1,3 @@
-import Entitiy.User;
-
 import java.util.Scanner;
 
 public class LoginPage {
@@ -10,20 +8,17 @@ public class LoginPage {
     }
 
     void run() {
-        String loginPage = """
-            =================================
-                  WELCOME TO UWU WALLET
-            =================================
+        String str = """
             1. Login
             2. Register
             3. Keluar
             """;
 
-        int menu;
+        int menu = -1;
 
         do{
-            System.out.println(loginPage);
-            System.out.print("Pilih: ");
+            System.out.println(str);
+            System.out.println("Pilih: ");
             menu = input.nextInt();
             input.nextLine();
 
@@ -34,15 +29,15 @@ public class LoginPage {
                 case 2:
                     registrasiMenu();
                     break;
-                case 3:
-                    System.out.println("Anda Telah Keluar");
+                case 0:
+                    System.out.println("Keluar");
                     break;
                 default:
                     System.out.println("Pilihan tidak benar");
                     break;
             }
             System.out.println();
-        }while (menu != 3);
+        }while (menu != 0);
     }
 
     void registrasiMenu() {
@@ -50,30 +45,29 @@ public class LoginPage {
 
         do {
             System.out.println("~~~~~~Pendaftaran Akun~~~~~~");
-            System.out.print("Nama        = ");
+            System.out.println("Nama        = ");
             nama = input.nextLine();
 
-            System.out.print("Username    = ");
+            System.out.println("Username    = ");
             username = input.nextLine();
 
-            System.out.print("No.Telp     = ");
+            System.out.println("No.Telp     = ");
             noTelp = input.nextLine();
 
-            System.out.print("Password    = ");
+            System.out.println("Password    = ");
             password = input.nextLine();
 
-            System.out.print("PIN         = ");
+            System.out.println("PIN         = ");
             pin = input.nextLine();
 
             User newUser = new User(nama, username, noTelp, password, pin);
 
-            if (Authorization.regis(newUser)) {
+            if (EWallet.registrasiUser(newUser)) {
                 System.out.println("Akun anda berhasil dibuat");
                 break;
             }
             else {
                 System.out.println("Akun anda telah terdaftar");
-                System.out.println();
             }
         }while (true);
     }
@@ -85,10 +79,10 @@ public class LoginPage {
         do {
             System.out.println("~~~~~~~LOGIN~~~~~~~");
 
-            System.out.print("Username    = ");
+            System.out.println("Username    = ");
             username = input.nextLine();
 
-            System.out.print("Password    = ");
+            System.out.println("Password    = ");
             password = input.nextLine();
 
             status = Authorization.login(username, password);
@@ -96,8 +90,6 @@ public class LoginPage {
             if (status) {
                 System.out.println("Anda telah masuk");
                 System.out.println();
-                new MainPageApp();
-                break;
             }
             else {
                 System.out.println("Username atau password yang anda masukkan salah");

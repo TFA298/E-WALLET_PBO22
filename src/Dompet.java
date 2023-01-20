@@ -1,16 +1,10 @@
-import java.util.ArrayList;
-
 public class Dompet {
     int pemasukan = 0;
     int pengeluaran = 0;
     Saldo saldo = new Saldo();
-    ArrayList<Transaksi> listTransaksi = new ArrayList<>();
 
     public Dompet() {
-    }
 
-    public Dompet(int income) {
-        this.pemasukan = income;
     }
 
     public void dataDompet() {

@@ -1,18 +1,18 @@
 //import java.util.ArrayList;
 //
 //public class DataUser {
-//    static ArrayList<Entitiy.User> datauser = new ArrayList<>();
+//    static ArrayList<User> datauser = new ArrayList<>();
 //    String nama;
 //    String username, password, no_Telp;
 //    String pin;
 //
 //    public static void dataPertama() {
-//        Entitiy.User user = new Entitiy.User("Teguh", "TFA", "123456","08123456789", "123");
+//        User user = new User("Teguh", "TFA", "123456","08123456789", "123");
 //        datauser.add(user);
 //    }
 //
 //    public static void seeData() {
-//        for (Entitiy.User data : datauser) {
+//        for (User data : datauser) {
 //            System.out.println("~~~~~~~~~~~~~~~~~~~~~~~");
 //            System.out.println("Nama  : " + data.getNama());
 //            System.out.println("Username  : " + data.getUsername());
@@ -24,12 +24,12 @@
 //    }
 //
 //    public static void addData(String nama, String username, String pass, String no_Telp, String pin) {
-//        Entitiy.User user = new Entitiy.User(nama, username, pass, no_Telp, pin);
+//        User user = new User(nama, username, pass, no_Telp, pin);
 //        datauser.add(user);
 //        System.out.println("Data berhasil dimasukkan");
 //    }
 //
-//    public static int indexData(Entitiy.User user) {
+//    public static int indexData(User user) {
 //        int index = datauser.indexOf(user);
 //        return index;
 //    }

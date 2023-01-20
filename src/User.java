@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 public class User{
     String nama;
     String username, password, no_Telp;
@@ -6,7 +7,7 @@ public class User{
     Dompet dompet;
 
     Scanner input = new Scanner(System.in);
-    public User(String nama, String username,String no_Telp, String pass, String pin) {
+    public User(String nama, String username, String pass, String no_Telp, String pin) {
         this.nama = nama;
         this.username = username;
         password = pass;
@@ -76,7 +77,7 @@ public class User{
         System.out.println("Masukkan Pin : " + pin);
         pin = input.nextLine();
 
-        User user = new User(nama, username, no_Telp, password, pin);
+        User user = new User(nama, username, password, no_Telp, pin);
         return user;
     }
 

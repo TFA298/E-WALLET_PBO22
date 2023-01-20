@@ -1,7 +1,11 @@
-public class TopUp extends Transaksi{
+public class TopUp {
     int nominalTopup;
 
     public TopUp(int nominalTopup) {
-        super("Top Up",nominalTopup, nominalTopup);
+        this.nominalTopup = nominalTopup;
+    }
+
+    public void dataTopup() {
+        System.out.println("Nominal Topup   = " + nominalTopup);
     }
 }
