@@ -8,4 +8,8 @@ public class TopUpEntity extends TransaksiEntity {
         this.nominalTopup = nominalTopup;
     }
 
+    @Override
+    public int getNominalHarga() {
+        return nominalTopup;
+    }
 }

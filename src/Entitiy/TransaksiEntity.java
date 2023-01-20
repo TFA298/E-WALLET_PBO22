@@ -1,7 +1,7 @@
 package Entitiy;
 import Utility.Date;
 
-public class TransaksiEntity {
+public abstract class TransaksiEntity {
     private String jenisTrs;
     private String tglTrs;
     public int nominalHarga;
@@ -37,9 +37,7 @@ public class TransaksiEntity {
         this.tglTrs = tglTrs;
     }
 
-    public int getNominalHarga(){
-        return nominalHarga;
-    }
+    public abstract int getNominalHarga();
 
     public void setNominalHarga(int nominalHarga) {
         this.nominalHarga = nominalHarga;

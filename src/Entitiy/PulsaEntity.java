@@ -13,6 +13,11 @@ public class PulsaEntity extends TransaksiEntity {
         this.nominalPulsaPurchase = vcrPulsa.getHarga();
     }
 
+    @Override
+    public int getNominalHarga() {
+        return nominalPulsaPurchase;
+    }
+
     public VoucherPulsaEntitiy getVcrPulsa() {
         return vcrPulsa;
     }
