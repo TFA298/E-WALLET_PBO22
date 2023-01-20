@@ -21,15 +21,15 @@ public class HistoryPage {
         for (TransaksiEntity transaksi : dompet.getListTransaksi()) {
             if (transaksi instanceof PulsaEntity) {
                 PulsaEntity pulsa = (PulsaEntity) transaksi;
-                System.out.println("Tanggal Entitiy.Transaksi   = "+ transaksi.getTglTrs());
-                System.out.println("Entitiy.Pulsa               = Rp."+ pulsa.getVcrPulsa().getTitle());
+                System.out.println("Tanggal Transaksi           = "+ transaksi.getTglTrs());
+                System.out.println("Pulsa                       = Rp."+ pulsa.getVcrPulsa().getTitle());
                 System.out.println("Nominal                     = Rp."+ Rupiah.format(pulsa.getVcrPulsa().getHarga()));
                 System.out.println("Bayar                       = Rp."+ Rupiah.format(transaksi.getTotalPayment()));
                 System.out.println("Kode Voucher                = "+ pulsa.getKodeVcr());
             }
             else {
-                System.out.println("Tanggal Entitiy.Transaksi   = "+ transaksi.getTglTrs());
-                System.out.println("Nominal Entitiy.Transaksi   = Rp."+ Rupiah.format(transaksi.getNominalHarga()));
+                System.out.println("Tanggal Transaksi           = "+ transaksi.getTglTrs());
+                System.out.println("Nominal Transaksi           = Rp."+ Rupiah.format(transaksi.getNominalHarga()));
             }
             System.out.println("========================================");
         }
