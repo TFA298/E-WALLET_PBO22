@@ -4,20 +4,30 @@ public class Authorization {
     public static User getUserLogged() {
         return userLogged;
     }
-    public static void initUser(){
-        User user = new User("Teguh Firdaus Alfaraih","TFA", "081331065985" , "12345","123");
-        EWallet.regisAkun(user);
-    }
+
     public static boolean login(String username, String password) {
-        if((EWallet.getAkunTerdaftar().username.equals(username) && EWallet.getAkunTerdaftar().password.equals(password))){
-            userLogged = EWallet.getAkunTerdaftar();
+        for (User user : EWallet.getAkunTerdaftar()) {
+            if((user.username.equals(username)) && (user.password.equals(password))) {
+                userLogged = user;
+                return true;
+            }
+        }return false;
+    }
+
+    public static boolean regis(User newAkun) {
+        for (User akun: EWallet.getAkunTerdaftar()) {
+            if (akun.username.equals(newAkun.username) || akun.no_Telp.equals(newAkun.no_Telp))
+                return false;
         }
-        else {
-            return false;
-        }
+        EWallet.getAkunTerdaftar().add(newAkun);
+        return true;
     }
 
     public static void logout() {
         userLogged = null;
+    }
+
+    public static boolean verifPin(String pin) {
+        return userLogged.pin.equals(pin);
     }
 }

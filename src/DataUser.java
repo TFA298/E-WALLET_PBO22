@@ -28,4 +28,17 @@ public class DataUser {
         datauser.add(user);
         System.out.println("Data berhasil dimasukkan");
     }
+
+    public static int indexData(User user) {
+        int index = datauser.indexOf(user);
+        return index;
+    }
+
+    public static void editData(String newNama, String newUsername, String newPass, String newNo_Telp, String newPin) {
+        int index = indexData();
+    }
+
+    public static void dltData() {
+
+    }
 }

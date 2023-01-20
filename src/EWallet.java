@@ -1,31 +1,16 @@
 import java.util.ArrayList;
 
 public class EWallet {
-    static User akunTerdaftar;
 
-    public static User getAkunTerdaftar() {
-        return akunTerdaftar;
+    private static ArrayList<User> registeredAkun = new ArrayList<>();
+
+    public static void initUser(){
+        User user = new User("Teguh Firdaus Alfaraih","TFA", "081331065985" , "12345","123");
+        Authorization.regis(user);
     }
 
-    public static boolean verifPin(String pin){
-        boolean status = akunTerdaftar.pin.equals(pin);
-
-        return status;
+    public static ArrayList<User> getAkunTerdaftar() {
+        return registeredAkun;
     }
 
-    public static boolean regisAkun(User newAkun){
-        if (akunTerdaftar != null){
-            if ((akunTerdaftar.username.equals(newAkun.username) || akunTerdaftar.no_Telp.equals(newAkun.no_Telp))){
-                return false;
-            }
-            else {
-                akunTerdaftar = newAkun;
-                return true;
-            }
-        }
-        else {
-            akunTerdaftar = newAkun;
-            return true;
-        }
-    }
 }

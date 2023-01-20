@@ -35,6 +35,50 @@ public class User{
         return pin;
     }
 
+    public Dompet getDompet() {
+        return dompet;
+    }
+
+    public void setNama(String nama) {
+        this.nama = nama;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
+    }
+
+    public void setNo_Telp(String no_Telp) {
+        this.no_Telp = no_Telp;
+    }
+
+    public void setDompet(Dompet dompet) {
+        this.dompet = dompet;
+    }
+
+    public User inputData() {
+        System.out.println();
+        System.out.println("Masukkan Nama Lengakp : " + nama);
+        nama = input.nextLine();
+        System.out.println("Masukkan Username : " + username);
+        username = input.nextLine();
+        System.out.println("Masukkan Password : " + password);
+        password = input.nextLine();
+        System.out.println("Masukkan No.Telepon SUe : " + no_Telp);
+        no_Telp = input.nextLine();
+        System.out.println("Masukkan Pin : " + pin);
+        pin = input.nextLine();
+
+        User user = new User(nama, username, no_Telp, password, pin);
+        return user;
+    }
 
     public void dataUser() {
         System.out.println("Nama Anda   : " + nama);

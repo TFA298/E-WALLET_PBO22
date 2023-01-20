@@ -62,7 +62,7 @@ public class LoginPage {
 
             User newUser = new User(nama, username, noTelp, password, pin);
 
-            if (EWallet.regisAkun(newUser)) {
+            if (Authorization.regis(newUser)) {
                 System.out.println("Akun anda berhasil dibuat");
                 break;
             }
