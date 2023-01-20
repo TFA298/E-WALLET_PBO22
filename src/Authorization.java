@@ -1,14 +1,16 @@
-public class Authorization {
-    static User userLogged = null;
+import Entitiy.User;
 
-    public static User getUserLogged() {
-        return userLogged;
+public class Authorization {
+    static User userHasLogin = null;
+
+    public static User getUserHasLogin() {
+        return userHasLogin;
     }
 
     public static boolean login(String username, String password) {
         for (User user : EWallet.getAkunTerdaftar()) {
-            if((user.username.equals(username)) && (user.password.equals(password))) {
-                userLogged = user;
+            if((user.getUsername().equals(username)) && (user.getPassword().equals(password))) {
+                userHasLogin = user;
                 return true;
             }
         }return false;
@@ -16,7 +18,7 @@ public class Authorization {
 
     public static boolean regis(User newAkun) {
         for (User akun: EWallet.getAkunTerdaftar()) {
-            if (akun.username.equals(newAkun.username) || akun.no_Telp.equals(newAkun.no_Telp))
+            if (akun.getUsername().equals(newAkun.getUsername()) || akun.getNo_Telp().equals(newAkun.getNo_Telp()))
                 return false;
         }
         EWallet.getAkunTerdaftar().add(newAkun);
@@ -24,10 +26,10 @@ public class Authorization {
     }
 
     public static void logout() {
-        userLogged = null;
+        userHasLogin = null;
     }
 
     public static boolean verifPin(String pin) {
-        return userLogged.pin.equals(pin);
+        return userHasLogin.getPin().equals(pin);
     }
 }

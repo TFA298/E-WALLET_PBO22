@@ -1,3 +1,5 @@
+import Entitiy.User;
+
 import java.util.Scanner;
 
 public class LoginPage {
@@ -9,6 +11,9 @@ public class LoginPage {
 
     void run() {
         String loginPage = """
+            =================================
+                  WELCOME TO UWU WALLET
+            =================================
             1. Login
             2. Register
             3. Keluar
@@ -18,7 +23,7 @@ public class LoginPage {
 
         do{
             System.out.println(loginPage);
-            System.out.println("Pilih: ");
+            System.out.print("Pilih: ");
             menu = input.nextInt();
             input.nextLine();
 
@@ -45,19 +50,19 @@ public class LoginPage {
 
         do {
             System.out.println("~~~~~~Pendaftaran Akun~~~~~~");
-            System.out.println("Nama        = ");
+            System.out.print("Nama        = ");
             nama = input.nextLine();
 
-            System.out.println("Username    = ");
+            System.out.print("Username    = ");
             username = input.nextLine();
 
-            System.out.println("No.Telp     = ");
+            System.out.print("No.Telp     = ");
             noTelp = input.nextLine();
 
-            System.out.println("Password    = ");
+            System.out.print("Password    = ");
             password = input.nextLine();
 
-            System.out.println("PIN         = ");
+            System.out.print("PIN         = ");
             pin = input.nextLine();
 
             User newUser = new User(nama, username, noTelp, password, pin);
@@ -80,10 +85,10 @@ public class LoginPage {
         do {
             System.out.println("~~~~~~~LOGIN~~~~~~~");
 
-            System.out.println("Username    = ");
+            System.out.print("Username    = ");
             username = input.nextLine();
 
-            System.out.println("Password    = ");
+            System.out.print("Password    = ");
             password = input.nextLine();
 
             status = Authorization.login(username, password);
@@ -91,6 +96,8 @@ public class LoginPage {
             if (status) {
                 System.out.println("Anda telah masuk");
                 System.out.println();
+                new MainPageApp();
+                break;
             }
             else {
                 System.out.println("Username atau password yang anda masukkan salah");
