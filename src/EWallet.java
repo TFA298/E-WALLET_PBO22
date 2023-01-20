@@ -1,20 +1,31 @@
 import java.util.ArrayList;
 
 public class EWallet {
+    static User akunTerdaftar;
 
-    public class void login(){
-
+    public static User getAkunTerdaftar() {
+        return akunTerdaftar;
     }
 
-    public class void regis(){
+    public static boolean verifPin(String pin){
+        boolean status = akunTerdaftar.pin.equals(pin);
 
+        return status;
     }
 
-    public class void verifpin(){
-
-    }
-
-    public class void logout(){
-
+    public static boolean regisAkun(User newAkun){
+        if (akunTerdaftar != null){
+            if ((akunTerdaftar.username.equals(newAkun.username) || akunTerdaftar.no_Telp.equals(newAkun.no_Telp))){
+                return false;
+            }
+            else {
+                akunTerdaftar = newAkun;
+                return true;
+            }
+        }
+        else {
+            akunTerdaftar = newAkun;
+            return true;
+        }
     }
 }
