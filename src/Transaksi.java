@@ -1,14 +1,17 @@
 public class Transaksi {
     String jenisTrs;
     String tglTrs;
-    String nominalHarga;
-    String totalBayar;
+    int nominalHarga;
+    int totalBayar;
 
-    public Transaksi(String jenisTrs, String nominalHarga, String totalBayar) {
+    public Transaksi(String jenisTrs, int nominalHarga, int totalBayar) {
         this.jenisTrs = jenisTrs;
         this.nominalHarga = nominalHarga;
         this.totalBayar = totalBayar;
         this.tglTrs = Date.now();
+    }
+
+    public Transaksi(String jenisTrs2, int nominalTopup) {
     }
 
     public void dataTransaksi() {

@@ -1,11 +1,7 @@
-public class TopUp{
+public class TopUp extends Transaksi{
     int nominalTopup;
 
-    public TopUp(String jenisTrs, int nominalTopup) {
-        this.nominalTopup = nominalTopup;
-    }
-
-    public void dataTopup() {
-        System.out.println("Nominal Topup   = " + nominalTopup);
+    public TopUp(int nominalTopup) {
+        super("Top Up",nominalTopup, nominalTopup);
     }
 }
