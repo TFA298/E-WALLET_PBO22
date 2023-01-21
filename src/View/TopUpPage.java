@@ -35,7 +35,7 @@ public class TopUpPage {
 
                 System.out.printf("Top up senilai Rp.%s telah berhasil\n", Rupiah.format(nominal));
                 System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                System.out.println("Enter untuk melanjutkan");
+                System.out.println("Ingin melanjutkan?");
                 scan.nextLine();
                 System.out.println();
                 break;

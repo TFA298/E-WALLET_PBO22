@@ -59,21 +59,20 @@ public class PulsaPage {
                             PulsaEntity newTrs = new PulsaEntity(pulsa, totalBayar);
 
                             ppController.pulsaPurchase(akun, newTrs);
-                            System.out.println("Voucher pulsa senilai Rp." + Rupiah.format(pulsa.getHarga()) + " berhasil dibeli");
+                            System.out.println("Voucher pulsa senilai Rp." + Rupiah.format(pulsa.getHarga()));
                             System.out.println("Voucher         : " + pulsa.getTitle());
                             System.out.println("Harga           : Rp." + Rupiah.format(pulsa.getHarga()));
                             System.out.println("Total           : Rp." + Rupiah.format(totalBayar));
                             System.out.println("Kode Voucher    : " + newTrs.getKodeVcr());
                             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                            System.out.println("Tekan Enter untuk melanjutkan ");
                             scan.nextLine();
                             System.out.println();
                             break;
                         }
                         else {
-                            System.out.println("Saldo anda kurang!!");
+                            System.out.println("Entitiy.Saldo kurang!!");
                             System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-                            System.out.println("Enter untuk melanjutkan ");
+                            System.out.println("Ingin melanjutkan ? ");
                             scan.nextLine();
                             System.out.println();
                             break;
@@ -84,8 +83,8 @@ public class PulsaPage {
                         System.out.println("PIN tidak valid");
                         if (test == 0) {
                             System.out.println("Anda telah gagal sebanyak 3x");
-                            System.out.println();
                             System.out.println("Silahkan coba lagi");
+                            System.out.println();
                             break;
                         }
                         System.out.println();

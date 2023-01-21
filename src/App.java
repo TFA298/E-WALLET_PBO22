@@ -1,6 +1,6 @@
 import Model.StorageModel;
 import Model.UserModel;
-import View.HomePage;
+import ViewGUI.LoginFrame;
 
 import java.util.Scanner;
 
@@ -10,11 +10,7 @@ public class App {
     public static void main(String[] args) {
         StorageModel.initialItemPulsa();
         UserModel.initUser();
-        new HomePage().run();
+//        new HomePage().run();
+        new LoginFrame().setVisible(true);
     }
 }
-
-
-
-
-

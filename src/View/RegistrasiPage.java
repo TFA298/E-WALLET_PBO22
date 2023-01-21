@@ -35,7 +35,7 @@ public class RegistrasiPage {
                 break;
             }
             else {
-                System.out.println("Akun anda telah terdaftar");
+                System.out.println("Username atau No.Telp telah digunakan");
                 System.out.println();
             }
         }while (true);
