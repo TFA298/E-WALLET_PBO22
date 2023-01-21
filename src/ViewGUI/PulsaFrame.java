@@ -69,10 +69,10 @@ public class PulsaFrame extends MainFrame{
             dispose();
         });
 
-        pulsa1.addAncestorListener((e) -> {
-            if (> StorageModel.getItemPulsa().size()) {
-
-            }
-        });
+//        pulsa1.addAncestorListener((e) -> {
+//            if (> StorageModel.getItemPulsa().size()) {
+//
+//            }
+//        });
     }
 }
